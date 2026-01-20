@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>독서 교육 지원 시스템 | Reading Education Support System</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&family=Noto+Sans+KR:wght@300;400;500;700&display=swap"
+        rel="stylesheet">
+
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="background-animation"></div>
+
+    <header class="main-header glass-panel">
+        <div class="logo">
+            <i class="fa-solid fa-book-open-reader"></i>
+            <span>ReadingFlow</span>
+        </div>
+        <nav class="main-nav">
+            <ul>
+                <li><a href="#strategies">독서 전략</a></li>
+                <li><a href="#admin">관리자</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Hero Section Removed -->
+
+
+        <section id="strategies" class="strategies-section">
+            <div class="section-header fade-in-on-scroll">
+                <h2>독서 전략 도구</h2>
+                <p>책의 내용을 깊이 있게 이해하기 위한 분석 도구들</p>
+            </div>
+
+            <div class="grid-container">
+                <!-- KWL -->
+                <a href="kwl.html" class="card glass-card hover-lift fade-in-on-scroll">
+                    <div class="card-icon color-1">
+                        <i class="fa-solid fa-clipboard-list"></i>
+                    </div>
+                    <div class="card-content">
+                        <h3>KWL 차트</h3>
+                        <p>읽기 전(Know), 읽고 싶은 것(Want), 읽은 후(Learned)를 정리해보세요.</p>
+                    </div>
+                    <div class="card-action">
+                        <span>바로가기</span>
+                        <i class="fa-solid fa-chevron-right"></i>
+                    </div>
+                </a>
+
+                <!-- Char -->
+                <a href="char.html" class="card glass-card hover-lift fade-in-on-scroll">
+                    <div class="card-icon color-2">
+                        <i class="fa-solid fa-users-viewfinder"></i>
+                    </div>
+                    <div class="card-content">
+                        <h3>인물 분석 스파이더맵</h3>
+                        <p>등장인물의 성격, 가치관, 관계를 다각도로 분석합니다.</p>
+                    </div>
+                    <div class="card-action">
+                        <span>바로가기</span>
+                        <i class="fa-solid fa-chevron-right"></i>
+                    </div>
+                </a>
+
+                <!-- Cause -->
+                <a href="cause.html" class="card glass-card hover-lift fade-in-on-scroll">
+                    <div class="card-icon color-3">
+                        <i class="fa-solid fa-link"></i>
+                    </div>
+                    <div class="card-content">
+                        <h3>원인과 결과 분석</h3>
+                        <p>사건의 원인(Why)과 결과(So What)를 연결하여 생각합니다.</p>
+                    </div>
+                    <div class="card-action">
+                        <span>바로가기</span>
+                        <i class="fa-solid fa-chevron-right"></i>
+                    </div>
+                </a>
+
+                <!-- Flow -->
+                <a href="flow.html" class="card glass-card hover-lift fade-in-on-scroll">
+                    <div class="card-icon color-4">
+                        <i class="fa-solid fa-wave-square"></i>
+                    </div>
+                    <div class="card-content">
+                        <h3>사건 흐름도</h3>
+                        <p>발단-전개-위기-절정-결말 5단계 구조를 파악합니다.</p>
+                    </div>
+                    <div class="card-action">
+                        <span>바로가기</span>
+                        <i class="fa-solid fa-chevron-right"></i>
+                    </div>
+                </a>
+
+                <!-- Mindmap -->
+                <a href="mindmap.html" class="card glass-card hover-lift fade-in-on-scroll">
+                    <div class="card-icon color-5">
+                        <i class="fa-solid fa-circle-nodes"></i>
+                    </div>
+                    <div class="card-content">
+                        <h3>디지털 마인드맵</h3>
+                        <p>주제어를 중심으로 생각을 자유롭게 확장해보세요.</p>
+                    </div>
+                    <div class="card-action">
+                        <span>바로가기</span>
+                        <i class="fa-solid fa-chevron-right"></i>
+                    </div>
+                </a>
+
+                <!-- Predict -->
+                <a href="predict.html" class="card glass-card hover-lift fade-in-on-scroll">
+                    <div class="card-icon color-6">
+                        <i class="fa-solid fa-magnifying-glass-chart"></i>
+                    </div>
+                    <div class="card-content">
+                        <h3>표지 & 제목 추리</h3>
+                        <p>탐정이 되어 표지와 제목으로 내용을 예측해보세요.</p>
+                    </div>
+                    <div class="card-action">
+                        <span>바로가기</span>
+                        <i class="fa-solid fa-chevron-right"></i>
+                    </div>
+                </a>
+            </div>
+        </section>
+
+        <section id="admin" class="admin-section">
+            <div class="section-header fade-in-on-scroll">
+                <h2>관리자 시스템</h2>
+                <p>교사용 활동 관리 및 모니터링</p>
+            </div>
+            <div class="admin-grid">
+                <a href="login.html" class="admin-card glass-card hover-scale fade-in-on-scroll">
+                    <i class="fa-solid fa-lock"></i>
+                    <span>로그인</span>
+                </a>
+                <a href="admin.html" class="admin-card glass-card hover-scale fade-in-on-scroll">
+                    <i class="fa-solid fa-chart-line"></i>
+                    <span>대시보드</span>
+                </a>
+            </div>
+        </section>
+    </main>
+
+    <footer class="main-footer">
+        <p>© 2026 Reading Education Support System. All rights reserved.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

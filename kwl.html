@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KWL 차트 | 독서 전략</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&family=Noto+Sans+KR:wght@300;400;500;700&display=swap"
+        rel="stylesheet">
+
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .worksheet-container {
+            max-width: 1200px;
+            margin: 100px auto 60px;
+            padding: 0 20px;
+        }
+
+        .worksheet-header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .worksheet-header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+            background: linear-gradient(135deg, #FF6B6B 0%, #FFE66D 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .kwl-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+
+        .kwl-column {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 20px;
+            padding: 24px;
+            display: flex;
+            flex-direction: column;
+            height: 600px;
+            /* Fixed height for example */
+        }
+
+        .column-header {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 20px;
+            padding-bottom: 15px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .column-icon {
+            width: 40px;
+            height: 40px;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: bold;
+        }
+
+        .kwl-textarea {
+            flex-grow: 1;
+            background: transparent;
+            border: none;
+            color: white;
+            resize: none;
+            font-size: 1.1rem;
+            line-height: 1.6;
+            outline: none;
+            font-family: inherit;
+        }
+
+        .kwl-textarea::placeholder {
+            color: rgba(255, 255, 255, 0.3);
+        }
+
+        /* Specific Gradients */
+        .icon-k {
+            background: linear-gradient(135deg, #FF9A9E 0%, #FECFEF 99%, #FECFEF 100%);
+        }
+
+        .icon-w {
+            background: linear-gradient(135deg, #a18cd1 0%, #fbc2eb 100%);
+        }
+
+        .icon-l {
+            background: linear-gradient(135deg, #84fab0 0%, #8fd3f4 100%);
+        }
+
+        @media (max-width: 768px) {
+            .kwl-grid {
+                grid-template-columns: 1fr;
+                height: auto;
+            }
+
+            .kwl-column {
+                height: 300px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="background-animation"></div>
+
+    <header class="main-header glass-panel">
+        <a href="index.html" class="logo" style="text-decoration: none;">
+            <i class="fa-solid fa-chevron-left"></i>
+            <span>Back to Home</span>
+        </a>
+        <div class="logo">
+            <i class="fa-solid fa-book-open-reader"></i>
+            <span>KWL Chart</span>
+        </div>
+        <div style="width: 100px;"></div> <!-- Spacer for center alignment -->
+    </header>
+
+    <main class="worksheet-container">
+        <div class="worksheet-header fade-in-up">
+            <h1>KWL 차트</h1>
+            <p>오늘 읽을 책에 대해 아는 것, 알고 싶은 것, 그리고 배운 것을 정리해보세요.</p>
+        </div>
+
+        <div class="kwl-grid fade-in-up">
+            <!-- K -->
+            <div class="kwl-column glass-card">
+                <div class="column-header">
+                    <div class="column-icon icon-k">K</div>
+                    <h3>What I Know</h3>
+                </div>
+                <textarea class="kwl-textarea" placeholder="이 주제에 대해 이미 알고 있는 내용은 무엇인가요?"></textarea>
+            </div>
+
+            <!-- W -->
+            <div class="kwl-column glass-card">
+                <div class="column-header">
+                    <div class="column-icon icon-w">W</div>
+                    <h3>What I Want to Know</h3>
+                </div>
+                <textarea class="kwl-textarea" placeholder="이 책을 통해 무엇을 배우고 싶나요? 궁금한 점을 적어보세요."></textarea>
+            </div>
+
+            <!-- L -->
+            <div class="kwl-column glass-card">
+                <div class="column-header">
+                    <div class="column-icon icon-l">L</div>
+                    <h3>What I Learned</h3>
+                </div>
+                <textarea class="kwl-textarea" placeholder="책을 읽고 나서 무엇을 배웠나요?"></textarea>
+            </div>
+        </div>
+
+        <div style="text-align: center; margin-top: 40px;" class="fade-in-up">
+            <button class="cta-button" style="border: none; cursor: pointer;">
+                <i class="fa-solid fa-save"></i> 저장하기
+            </button>
+        </div>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

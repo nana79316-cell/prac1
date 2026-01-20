@@ -1,0 +1,110 @@
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix schema: <http://schema.org/> .
+@prefix site: <http://example.org/reading-system/> .
+@prefix res: <http://example.org/resources/> .
+
+#########################################################
+### 1. 웹사이트 및 메인 구조 정의
+#########################################################
+
+site:ReadingSystem a schema:WebSite ;
+    schema:name "독서 교육 지원 시스템" ;
+    schema:description "학생들의 독서 전략 습득과 교사의 활동 관리를 지원하는 웹 플랫폼" ;
+    schema:mainEntity site:HomePage .
+
+site:HomePage a schema:WebPage ;
+    schema:name "메인 인덱스" ;
+    schema:url "index.html" ;
+    schema:description "독서 전략 도구와 관리자 페이지로 이동하는 관문" ;
+    schema:hasPart site:Section_Strategies, site:Section_Admin .
+
+#########################################################
+### 2. 학생용 독서 전략 도구 (Strategies)
+#########################################################
+
+site:Section_Strategies a schema:SiteNavigationElement ;
+    schema:name "독서 전략 워크시트 모음" ;
+    schema:description "책의 내용을 깊이 있게 이해하기 위한 다양한 분석 도구들" ;
+    schema:hasPart site:Page_KWL, site:Page_Char, site:Page_Cause, 
+                   site:Page_Flow, site:Page_Mindmap, site:Page_Predict .
+
+# 1. KWL 차트
+site:Page_KWL a schema:WebPage ;
+    schema:name "KWL 차트" ;
+    schema:url "kwl.html" ;
+    schema:description "읽기 전(Know), 읽고 싶은 것(Want), 읽은 후(Learned)를 정리하는 전략" ;
+    schema:learningResourceType "Worksheet" .
+
+# 2. 인물 분석
+site:Page_Char a schema:WebPage ;
+    schema:name "인물 분석 스파이더맵" ;
+    schema:url "char.html" ;
+    schema:description "등장인물의 성격, 가치관, 관계, 나의 평가를 다각도로 분석하는 도구" ;
+    schema:learningResourceType "Worksheet" .
+
+# 3. 원인과 결과
+site:Page_Cause a schema:WebPage ;
+    schema:name "원인과 결과 분석" ;
+    schema:url "cause.html" ;
+    schema:description "사건의 원인(Why)과 그로 인한 결과(So What)를 연결하여 사고하는 도구" ;
+    schema:learningResourceType "Worksheet" .
+
+# 4. 사건 흐름도
+site:Page_Flow a schema:WebPage ;
+    schema:name "사건 흐름도" ;
+    schema:url "flow.html" ;
+    schema:description "발단, 전개, 위기, 절정, 결말의 5단계로 이야기 구조를 파악하는 도구" ;
+    schema:learningResourceType "Worksheet" .
+
+# 5. 마인드맵
+site:Page_Mindmap a schema:WebPage ;
+    schema:name "디지털 마인드맵" ;
+    schema:url "mindmap.html" ;
+    schema:description "주제어를 중심으로 생각을 방사형으로 확장하는 시각적 사고 도구" ;
+    schema:mainEntity res:Script_Mindmap ; # 핵심 로직 연결
+    schema:learningResourceType "Interactive Tool" .
+
+# 6. 표지/제목 추리
+site:Page_Predict a schema:WebPage ;
+    schema:name "표지 & 제목 추리 탐정" ;
+    schema:url "predict.html" ;
+    schema:description "책의 표지 이미지와 제목을 단서로 내용을 예측해보는 탐정 테마 활동" ;
+    schema:learningResourceType "Worksheet" .
+
+#########################################################
+### 3. 관리자 및 시스템 (Admin & System)
+#########################################################
+
+site:Section_Admin a schema:SiteNavigationElement ;
+    schema:name "관리자 시스템" ;
+    schema:hasPart site:Page_Login, site:Page_Dashboard .
+
+# 관리자 로그인
+site:Page_Login a schema:WebPage ;
+    schema:name "관리자 로그인" ;
+    schema:url "login.html" ;
+    schema:description "관리자 접근 권한 인증 페이지" .
+
+# 관리자 대시보드
+site:Page_Dashboard a schema:WebPage ;
+    schema:name "제출 현황 대시보드" ;
+    schema:url "admin.html" ;
+    schema:description "학생들의 활동지 제출 현황을 통계, 리스트, 갤러리 형태로 확인하고 피드백하는 페이지" ;
+    schema:mainEntity res:Script_Admin .
+
+#########################################################
+### 4. 자바스크립트 리소스 (Technical Components)
+#########################################################
+
+res:Script_Mindmap a schema:SoftwareSourceCode ;
+    schema:name "Mindmap Logic" ;
+    schema:url "mindmap.js" ;
+    schema:programmingLanguage "JavaScript" ;
+    schema:description "노드 생성, 연결선 그리기, 드래그 앤 드롭 기능을 처리하는 로직" .
+
+res:Script_Admin a schema:SoftwareSourceCode ;
+    schema:name "Admin Dashboard Logic" ;
+    schema:url "admin.js" ;
+    schema:programmingLanguage "JavaScript" ;
+    schema:description "데이터 로드, 렌더링, CSV 내보내기, 피드백 저장 기능을 수행하는 로직" .
